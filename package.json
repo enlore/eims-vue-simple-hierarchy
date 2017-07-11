@@ -1,4 +1,10 @@
 {
+  "name": "eims-vue-simple-hierarchy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/enlore/eims-vue-simple-hierarchy.git",
+  "author": "enlore <n.e.lorenson@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "play": "poi --config play.config.js",
     "build:play": "poi build --config play.config.js"
