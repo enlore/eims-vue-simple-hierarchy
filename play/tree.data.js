@@ -12,7 +12,7 @@ export default [
             },
             {
                 level: 1,
-                data: { name: 'child 2' }
+                data: { name: 'cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild cchild 2hild 2cchild 2hild 2222222222222222222cchild 2hild 2cchild 2hild 2' }
             },
             {
                 level: 1,
