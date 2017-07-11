@@ -6,8 +6,7 @@
                 :collapseIcon="collapseIcon"
                 :expandIcon="expandIcon"
                 :expanded="expanded"
-                @collapse="toggleChildren"
-                @expand="toggleChildren"
+                @toggle="toggleChildren"
             ></tree-child-control>
 
             <div class="treeChild-output"> {{ child.data.name }} </div>
@@ -74,12 +73,6 @@
 .treeChild-content {
     display: flex;
     padding: 4px 0 8px 0;
-}
-
-.treeChild-control {
-    flex: 0 0 16px;
-    cursor: pointer;
-    font-size: 1.2em;
 }
 </style>
 

@@ -1,8 +1,10 @@
 <template>
     <div class="treeChild-control">
         <transition v-if="hasChildren">
-            <img :src="collapseIcon" v-if="expanded" @click="$emit('collapse')">
-            <img :src="expandIcon" v-else @click="$emit('expand')">
+            <div class="treeChild-iconWrap" @click="$emit('toggle')">
+                <div class="treeChild-icon" :style="{ 'background-image': 'url(' + collapseIcon + ')' }" v-if="expanded"></div>
+                <div class="treeChild-icon" :style="{ 'background-image': 'url(' + expandIcon + ')' }" v-else></div>
+            </div>
         </transition>
     </div>
 </template>
@@ -28,5 +30,19 @@
 </script>
 
 <style scoped>
+.treeChild-control {
+    flex: 0 0 16px;
+    cursor: pointer;
+}
+
+.treeChild-iconWrap {
+    width: 12px;
+    height: 12px;
+}
+
+.treeChild-icon {
+    display: block;
+    padding: 6px;
+}
 </style>
 
