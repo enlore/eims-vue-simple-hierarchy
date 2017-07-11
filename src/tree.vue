@@ -1,8 +1,6 @@
 <template>
-    <div class="treeview">
-        <div v-for="child in data">
-            <tree-child :child="child"></tree-child>
-        </div>
+    <div class="treeView">
+        <tree-child v-for="child in data" :child="child"></tree-child>
     </div>
 </template>
 

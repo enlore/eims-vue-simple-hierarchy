@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <div class="treeChild">
+    <div class="treeChild">
+        <div class="treeChild-content">
             <div class="treeChild-control" @click="toggleChildren"> + </div>
             <div class="treeChild-output"> {{ child.data.name }} </div>
         </div>
 
         <div class="treeChild-children" ref="children">
-            <div v-for="nextChild in child.children">
-                <tree-child style="padding-left: 16px;" :child="nextChild"></tree-child>
-            </div>
+            <tree-child v-for="nextChild in child.children" style="padding-left: 16px;" :child="nextChild"></tree-child>
         </div>
     </div>
 </template>
@@ -46,7 +44,7 @@
 </script>
 
 <style scoped>
-.treeChild {
+.treeChild-content {
     display: flex;
     padding: 4px 0 8px 0;
 }
