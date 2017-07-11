@@ -24,10 +24,7 @@
 </template>
 
 <script>
-    // if child, show control else don't
-    // hide children when collapased
     // set height on children container instead of each child
-    // default to bundled images for collapse control
     // prefer optionally supplied image paths for collapse control
     export default {
         name: 'tree-child',
