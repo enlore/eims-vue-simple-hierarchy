@@ -24,8 +24,6 @@
 </template>
 
 <script>
-    // set height on children container instead of each child
-    // prefer optionally supplied image paths for collapse control
     export default {
         name: 'tree-child',
 
