@@ -6,4 +6,8 @@
 * prefer optionally supplied image paths for collapse control
 * dynamic prop name config for what to render to ui?
 * dynamic content renderer?
+* refactor to smooth out names (data, child, children, child.children, etc kind
+  of suck; encoded icon names are goofy relative to props for icons)
+* lazy fetch/load logic (and gif!)
+* create action hook for adding children
 
