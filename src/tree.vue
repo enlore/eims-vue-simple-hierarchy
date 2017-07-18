@@ -11,6 +11,7 @@
                 :child="child"
                 :collapseIcon="coIcon"
                 :expandIcon="exIcon"
+                :row="rowRenderer"
                 @rowClicked="treeRootChildClickHandler"
                 ></tree-child>
         </div>
@@ -66,31 +67,12 @@
         },
 
         data () {
-            return {
-                customRowRenderer: {
-                    template: `
-                        <div class="treeRowCustom" style="" @click="customRowClickHandler">
-                            <div style="flex: 1 0; max-width: 90%;"> {{ data.name }} </div>
-                            <div style=""> {{ data.bool }} </div>
-                        </div>
-                    `,
-
-                    props: [
-                        'data'
-                    ],
-
-                    methods: {
-                        customRowClickHandler ($ev) {
-                            console.info('injected tree output row clicked')
-                            this.$emit('rowClicked', this.data)
-                        },
-                    }
-                }
-            }
+            return {}
         },
 
         props: [
             'data',
+            'rowRenderer',
             'expandIcon',
             'collapseIcon'
         ]
