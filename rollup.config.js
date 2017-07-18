@@ -66,6 +66,8 @@ const isProduction = process.env.NODE_ENV === `production`
 const isDevelopment = process.env.NODE_ENV === `development`
 
 if (isProduction) {
+    config.entry = './src/tree.vue'
+    config.dest = './dist'
     config.sourceMap = false
     config.plugins.push(butternut)
 }
