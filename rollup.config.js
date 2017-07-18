@@ -67,7 +67,8 @@ const isDevelopment = process.env.NODE_ENV === `development`
 
 if (isProduction) {
     config.entry = './src/tree.vue'
-    config.dest = './dist'
+    config.dest = './dist/eims-vue-tree-view.umd.js'
+    config.moduleName = 'eims-vue-tree-view'
     config.sourceMap = false
     config.plugins.push(butternut)
 }
