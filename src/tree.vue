@@ -11,7 +11,6 @@
                 :child="child"
                 :collapseIcon="coIcon"
                 :expandIcon="exIcon"
-                :row="customRowRenderer"
                 @rowClicked="treeRootChildClickHandler"
                 ></tree-child>
         </div>
@@ -52,7 +51,6 @@
 
         methods: {
             treeRootChildClickHandler (arg) {
-                console.info('rowClicked happened', arg)
                 this.$emit('rowClicked', arg)
             }
         },
@@ -125,6 +123,7 @@
     background-color: #616A87;
     color: #fff;
     border-radius: 3px 3px 0 0;
+    text-align: left;
 }
 
 .treeViewHeader-cell {

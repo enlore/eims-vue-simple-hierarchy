@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <Hello></Hello>
-    <tree-view :data="nodes" style="margin-top: 16px;"></tree-view>
+    <tree-view :data="nodes" @rowClicked="log" style="margin-top: 16px;"></tree-view>
   </div>
 </template>
 
@@ -16,17 +16,23 @@ export default {
         return {
             nodes: [
                 {
-                    data: { name: 'ok' },
+                    data: { name: 'ok', flag: true },
                     children: [
                         {
-                            data: { name: 'first child' }
+                            data: { name: 'first child', flag: false }
                         },
                         {
-                            data: { name: 'another child?' }
+                            data: { name: 'another child?', flag: true }
                         }
                     ]
                 }
             ]
+        }
+    },
+
+    methods: {
+        log (arg) {
+            console.info(arg)
         }
     },
 

@@ -17,7 +17,7 @@
                     :data="child.data">
                 </component>
 
-                <div @click="$emit('rowClicked', child.data.name)">
+                <div @click="$emit('rowClicked', child.data)">
                     {{ child.data.name }}
                 </div>
             </div>
@@ -71,7 +71,6 @@
             },
 
             treeChildOutputClickHandler (data) {
-                console.info('default tree output row clicked', data)
                 this.$emit('rowClicked', data)
             },
 
