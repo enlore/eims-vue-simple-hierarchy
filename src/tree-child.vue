@@ -17,7 +17,7 @@
                     :data="child.data">
                 </component>
 
-                <div @click="$emit('rowClicked', child.data)">
+                <div v-else @click="$emit('rowClicked', child.data)">
                     {{ child.data.name }}
                 </div>
             </div>
