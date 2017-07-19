@@ -9,15 +9,14 @@
                 @toggle="toggleChildren"
             ></tree-child-control>
 
-            <div class="treeChild-content" >
+            <div class="treeChild-content" @click="$emit('rowClicked', child.data)">
                 <component
                     v-if="row"
                     :is="row"
-                    @rowClicked="treeChildOutputClickHandler"
                     :data="child.data">
                 </component>
 
-                <div v-else @click="$emit('rowClicked', child.data)">
+                <div v-else>
                     {{ child.data.name }}
                 </div>
             </div>
