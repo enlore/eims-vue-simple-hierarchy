@@ -9845,7 +9845,7 @@ var TreeChildControl = {render: function(){var _vm=this;var _h=_vm.$createElemen
     }
 };
 
-var TreeChild = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"treeChild"},[_c('div',{staticClass:"treeChild-output"},[(_vm.hasChildren)?_c('tree-child-control',{attrs:{"collapseIcon":_vm.collapseIcon,"expandIcon":_vm.expandIcon,"expanded":_vm.expanded},on:{"toggle":_vm.toggleChildren}}):_vm._e(),_c('div',{staticClass:"treeChild-content"},[(_vm.row)?_c(_vm.row,{tag:"component",attrs:{"data":_vm.child.data},on:{"rowClicked":_vm.treeChildOutputClickHandler}}):_vm._e(),_c('div',{on:{"click":function($event){_vm.$emit('rowClicked', _vm.child.data.name);}}},[_vm._v(_vm._s(_vm.child.data.name))])],1)],1),_c('div',{ref:"children",staticClass:"treeChild-children",attrs:{"transition":""}},_vm._l((_vm.child.children),function(nextChild, i){return _c('tree-child',{attrs:{"child":nextChild,"collapseIcon":_vm.collapseIcon,"expandIcon":_vm.expandIcon,"row":_vm.row},on:{"rowClicked":_vm.intermediateTreeChildEmitter}})}))])},staticRenderFns: [],_scopeId: 'data-v-8fb1c774',
+var TreeChild = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"treeChild"},[_c('div',{staticClass:"treeChild-output"},[(_vm.hasChildren)?_c('tree-child-control',{attrs:{"collapseIcon":_vm.collapseIcon,"expandIcon":_vm.expandIcon,"expanded":_vm.expanded},on:{"toggle":_vm.toggleChildren}}):_vm._e(),_c('div',{staticClass:"treeChild-content"},[(_vm.row)?_c(_vm.row,{tag:"component",attrs:{"data":_vm.child.data},on:{"rowClicked":_vm.treeChildOutputClickHandler}}):_c('div',{on:{"click":function($event){_vm.$emit('rowClicked', _vm.child.data);}}},[_vm._v(_vm._s(_vm.child.data.name))])],1)],1),_c('div',{ref:"children",staticClass:"treeChild-children",attrs:{"transition":""}},_vm._l((_vm.child.children),function(nextChild, i){return _c('tree-child',{attrs:{"child":nextChild,"collapseIcon":_vm.collapseIcon,"expandIcon":_vm.expandIcon,"row":_vm.row},on:{"rowClicked":_vm.intermediateTreeChildEmitter}})}))])},staticRenderFns: [],_scopeId: 'data-v-8fb1c774',
     name: 'tree-child',
 
     data: function data () {
@@ -9877,7 +9877,6 @@ var TreeChild = {render: function(){var _vm=this;var _h=_vm.$createElement;var _
         },
 
         treeChildOutputClickHandler: function treeChildOutputClickHandler (data) {
-            console.info('default tree output row clicked', data);
             this.$emit('rowClicked', data);
         },
 
@@ -9901,7 +9900,7 @@ var iconCollapsed = "\n<svg width=\"12px\" height=\"12px\" viewBox=\"0 0 12 12\"
 
 var iconUncollapsed = "\n<svg width=\"12px\" height=\"12px\" viewBox=\"0 0 12 2\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<title>icon-uncollapsed</title>\n<defs></defs>\n<g id=\"Page-1\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n    <g id=\"Artboard\" transform=\"translate(-268.000000, -288.000000)\">\n        <image id=\"icon-uncollapsed\" x=\"268\" y=\"283\" width=\"12\" height=\"12\" xlink:href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAABpJREFUKBVjYBiBgNHZ2fk/Kf5mIkXxiFULAGN3AczMXIn5AAAAAElFTkSuQmCC\"></image>\n    </g>\n</g>\n</svg>";
 
-var TreeView = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"treeView"},[_vm._m(0),_c('div',{staticClass:"treeView-body"},_vm._l((_vm.data),function(child){return _c('tree-child',{attrs:{"child":child,"collapseIcon":_vm.coIcon,"expandIcon":_vm.exIcon,"row":_vm.customRowRenderer},on:{"rowClicked":_vm.treeRootChildClickHandler}})}))])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"treeView-header"},[_c('div',{staticClass:"treeViewHeader-cell",staticStyle:{"flex":"1 0","max-width":"85%"}},[_vm._v("Area")]),_c('div',{staticClass:"treeViewHeader-cell",staticStyle:{"border-left":"1px solid rgba(0, 0, 0, .2)"}},[_vm._v("Customized?")])])}],
+var TreeView = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"treeView"},[_vm._m(0),_c('div',{staticClass:"treeView-body"},_vm._l((_vm.data),function(child){return _c('tree-child',{attrs:{"child":child,"collapseIcon":_vm.coIcon,"expandIcon":_vm.exIcon,"row":_vm.rowRenderer},on:{"rowClicked":_vm.treeRootChildClickHandler}})}))])},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"treeView-header"},[_c('div',{staticClass:"treeViewHeader-cell",staticStyle:{"flex":"1 0","max-width":"85%"}},[_vm._v("Area")]),_c('div',{staticClass:"treeViewHeader-cell",staticStyle:{"border-left":"1px solid rgba(0, 0, 0, .2)"}},[_vm._v("Customized?")])])}],
     name: 'Tree-View',
 
     components: {
@@ -9910,7 +9909,6 @@ var TreeView = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c
 
     methods: {
         treeRootChildClickHandler: function treeRootChildClickHandler (arg) {
-            console.info('rowClicked happened', arg);
             this.$emit('rowClicked', arg);
         }
     },
@@ -9926,49 +9924,41 @@ var TreeView = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c
     },
 
     data: function data () {
-        return {
-            customRowRenderer: {
-                template: "\n                    <div class=\"treeRowCustom\" style=\"\" @click=\"customRowClickHandler\">\n                        <div style=\"flex: 1 0; max-width: 90%;\"> {{ data.name }} </div>\n                        <div style=\"\"> {{ data.bool }} </div>\n                    </div>\n                ",
-
-                props: [
-                    'data'
-                ],
-
-                methods: {
-                    customRowClickHandler: function customRowClickHandler ($ev) {
-                        console.info('injected tree output row clicked');
-                        this.$emit('rowClicked', this.data);
-                    },
-                }
-            }
-        }
+        return {}
     },
 
     props: [
         'data',
+        'rowRenderer',
         'expandIcon',
         'collapseIcon'
     ]
 };
 
-var App = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app"},[_c('Hello'),_c('tree-view',{staticStyle:{"margin-top":"16px"},attrs:{"data":_vm.nodes}})],1)},staticRenderFns: [],
+var App = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app"},[_c('Hello'),_c('tree-view',{staticStyle:{"margin-top":"16px"},attrs:{"data":_vm.nodes},on:{"rowClicked":_vm.log}})],1)},staticRenderFns: [],
     name: 'App-Root',
 
     data: function data () {
         return {
             nodes: [
                 {
-                    data: { name: 'ok' },
+                    data: { name: 'ok', flag: true },
                     children: [
                         {
-                            data: { name: 'first child' }
+                            data: { name: 'first child', flag: false }
                         },
                         {
-                            data: { name: 'another child?' }
+                            data: { name: 'another child?', flag: true }
                         }
                     ]
                 }
             ]
+        }
+    },
+
+    methods: {
+        log: function log (arg) {
+            console.info(arg);
         }
     },
 
