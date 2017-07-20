@@ -22,12 +22,13 @@
             </div>
         </div>
 
-        <div class="treeChild-children" ref="children" transition>
+        <div class="treeChild-children" ref="children" :style="childrenStyles">
             <tree-child
                 v-for="nextChild, i in child.children"
                 :child="nextChild"
-                :collapseIcon="collapseIcon"
-                :expandIcon="expandIcon"
+                :collapse-icon="collapseIcon"
+                :expand-icon="expandIcon"
+                :expand-default="expandDefault"
                 :row="row"
                 @rowClicked="intermediateTreeChildEmitter"
                 ></tree-child>
@@ -52,15 +53,28 @@
         },
 
         computed: {
+            childrenStyles () {
+                if (this.expanded)
+                    return { height: 'auto', display: 'block' }
+                else
+                    return { height: '0', display: 'none' }
+            },
+
             hasChildren () {
                 return this.child.children && this.child.children.length > 0
             },
+        },
+
+        created () {
+            if (this.expandDefault !== void 0)
+                this.expanded = this.expandDefault
         },
 
         props: [
             'child',
             'collapseIcon',
             'expandIcon',
+            'expandDefault',
             'row'
         ],
 
@@ -74,18 +88,8 @@
             },
 
             toggleChildren () {
-                let children = this.$refs.children
-
-                if (children.style.height === "0px") {
-                    children.style.height = "auto"
-                    children.style.display = "block"
-                    this.expanded = true
-                } else {
-                    children.style.height = "0px"
-                    children.style.display = "none"
-                    this.expanded = false
-                }
-            }
+                this.expanded = !this.expanded
+            },
         }
     }
 </script>

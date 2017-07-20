@@ -6,12 +6,23 @@
         </div>
 
         <div class="treeView-body">
+            <div class="treeView-loadingContainer" v-if="loading">
+                <img class="treeView-loadingIndicator" v-if="loadingGif" :src="loadingGif"/>
+                <div class="treeView-loadingIndicator" style="text-align: center;" v-else> Loading </div>
+            </div>
+
+            <div class="treeView-initMessage" v-else-if="initMessage">
+                <div> {{ initMessage }} </div>
+            </div>
+
             <tree-child
+                v-else
                 v-for="child in data"
                 :child="child"
                 :collapseIcon="coIcon"
                 :expandIcon="exIcon"
                 :row="rowRenderer"
+                :expandDefault="expandDefault"
                 @rowClicked="treeRootChildClickHandler"
                 ></tree-child>
         </div>
@@ -46,6 +57,11 @@
     export default {
         name: 'Tree-View',
 
+        data () {
+            return {
+            }
+        },
+
         components: {
             TreeChild
         },
@@ -53,7 +69,7 @@
         methods: {
             treeRootChildClickHandler (arg) {
                 this.$emit('rowClicked', arg)
-            }
+            },
         },
 
         computed: {
@@ -66,15 +82,15 @@
             }
         },
 
-        data () {
-            return {}
-        },
-
         props: [
+            'initMessage',
+            'loadingGif',
             'data',
             'rowRenderer',
             'expandIcon',
-            'collapseIcon'
+            'expandDefault',
+            'collapseIcon',
+            'loading'
         ]
     }
 </script>
@@ -94,10 +110,11 @@
 }
 
 .treeView-body {
-    max-height: 400px;
+    height: 600px;
     overflow-y: auto;
     border: 1px solid lightgrey;
     border-top: none;
+    position: relative;
 }
 
 .treeView-header {
@@ -110,6 +127,20 @@
 
 .treeViewHeader-cell {
     padding: 16px 8px 16px 16px;
+}
+
+.treeView-loadingIndicator {
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+}
+
+.treeView-initMessage {
+    text-align: center;
+    top: 33%;
+    position: relative;
 }
 </style>
 
