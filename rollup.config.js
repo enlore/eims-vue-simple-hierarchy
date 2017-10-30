@@ -37,12 +37,12 @@ const config = {
 
 const umdConfig = {
   format: 'umd',
-  sourcemap: true,
+  // for umd
+  name: 'eims-vue-tree-view'
 }
 
 const moduleConfig = {
   format: 'es',
-  sourcemap: true,
 }
 
 const isProduction = process.env.NODE_ENV === `production`
@@ -51,12 +51,9 @@ const isDevelopment = process.env.NODE_ENV === `development`
 if (isProduction) {
   //umdConfig.input = './src/tree.vue'
   umdConfig.file = './dist/eims-vue-tree-view.umd.js'
-  umdConfig.name = 'eims-vue-tree-view'
-  umdConfig.sourcemap = false
 
   //moduleConfig.input = './src/tree.vue'
   moduleConfig.file = './dist/eims-vue-tree-view.es6.js'
-  moduleConfig.sourcemap = false
 
   config.plugins.push(butternut)
   config.output.push(umdConfig)
@@ -71,8 +68,11 @@ if (isDevelopment) {
     port: 8080,
     open: true
   }))
-}
 
-console.log(config)
+  umdConfig.file = './public/assets/js/app.js'
+  umdConfig.sourcemap = false
+
+  config.output.push(umdConfig)
+}
 
 export default config
