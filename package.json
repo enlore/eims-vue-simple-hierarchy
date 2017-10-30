@@ -3,7 +3,6 @@
   "version": "1.1.0",
   "description": "A collapseable tree view",
   "author": "enlore <n.e.lorenson@gmail.com>",
-  "private": true,
   "module": "dist/eims-vue-tree-view.es6.js",
   "scripts": {
     "build": "run-s build:**",
@@ -12,10 +11,8 @@
     "build:cssnano": "cssnano public/assets/css/app.css public/assets/css/app.css",
     "dev": "cross-env NODE_ENV=development rollup -cw"
   },
-  "dependencies": {
-    "vue": "^2.3.3"
-  },
   "devDependencies": {
+    "vue": "^2.3.3",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "cross-env": "^5.0.0",
