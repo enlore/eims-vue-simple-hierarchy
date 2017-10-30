@@ -1,6 +1,6 @@
 {
   "name": "eims-vue-tree-view",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A collapseable tree view",
   "author": "enlore <n.e.lorenson@gmail.com>",
   "module": "dist/eims-vue-tree-view.es6.js",
