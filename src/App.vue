@@ -1,13 +1,14 @@
 <template>
   <div class="app">
     <Hello></Hello>
-    <tree-view :data="nodes" @rowClicked="log" style="margin-top: 16px;"></tree-view>
+    <tree-view :data="nodes" :headerRenderer="header" @rowClicked="log" style="margin-top: 16px;"></tree-view>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello.vue'
 import TreeView from './tree.vue'
+import CustomHeader from './custom/CustomHeader.vue'
 
 export default {
     name: 'App-Root',
@@ -26,7 +27,8 @@ export default {
                         }
                     ]
                 }
-            ]
+            ],
+            header: CustomHeader
         }
     },
 

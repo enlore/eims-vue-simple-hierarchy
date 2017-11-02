@@ -1,8 +1,12 @@
 <template>
     <div class="treeView">
-        <div class="treeView-header">
-            <div class="treeViewHeader-cell" style="flex: 1 0; max-width: 85%;"> Area </div>
-            <div class="treeViewHeader-cell" style="border-left: 1px solid rgba(0, 0, 0, .2);"> Customized? </div>
+
+        <div>
+            <component v-if="headerRenderer" :is="headerRenderer"></component>
+            <div v-else class="treeView-header">
+                <div class="treeViewHeader-cell" style="flex: 1 0; max-width: 85%;"> Area </div>
+                <div class="treeViewHeader-cell" style="border-left: 1px solid rgba(0, 0, 0, .2);"> Customized? </div>
+            </div>
         </div>
 
         <div class="treeView-body">
@@ -87,6 +91,7 @@
             'loadingGif',
             'data',
             'rowRenderer',
+            'headerRenderer',
             'expandIcon',
             'expandDefault',
             'collapseIcon',
