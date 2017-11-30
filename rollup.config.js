@@ -19,7 +19,10 @@ const plugins = [
     css: './public/assets/css/app.css'
   }),
   buble({
-    objectAssign: 'Object.assign'
+    objectAssign: 'Object.assign',
+    transforms: {
+      conciseMethodProperty: true
+    }
   }),
   nodeResolve({
     jsnext: true,
